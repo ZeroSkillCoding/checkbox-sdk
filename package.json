@@ -1,0 +1,38 @@
+{
+  "name": "checkbox-sdk",
+  "version": "0.0.1",
+  "description": "TypeScript SDK for seamless Checkbox.ua API integration",
+  "type": "module",
+  "scripts": {
+    "generate:types": "openapi-typescript ./openapi/openapi.json -o ./packages/types/src/generated.ts",
+    "build": "tsc -b",
+    "typecheck": "pnpm build && pnpm -r typecheck",
+    "lint": "eslint . --max-warnings 0",
+    "lint:fix": "eslint . --fix --max-warnings 0",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test",
+    "test": "pnpm --filter @checkbox-sdk/core test",
+    "test:watch": "pnpm --filter @checkbox-sdk/core test:watch",
+    "test:coverage": "pnpm --filter @checkbox-sdk/core test:coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "openapi-typescript": "^7.13.0",
+    "prettier": "^3.9.8",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "^8.70.0"
+  },
+  "license": "MIT",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.3.4",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.3.4"
+}
