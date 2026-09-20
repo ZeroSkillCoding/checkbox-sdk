@@ -1,0 +1,26 @@
+{
+  "name": "@checkbox-sdk/types",
+  "version": "1.0.0",
+  "description": "Generated TypeScript definitions for the Checkbox API",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "!dist/**/*.tsbuildinfo"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "pnpm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  }
+}
